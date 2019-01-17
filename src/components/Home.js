@@ -11,7 +11,7 @@ class Home extends Component {
               {this.props.posts.map(post => {
                 let path = `/post/${post.id}`
                 return (
-                  <Link to={path}>{post.id}</Link>
+                  <Link key={post.id} to={path}>{post.id}</Link>
                 )
 
 

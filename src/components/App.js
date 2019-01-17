@@ -2,6 +2,7 @@ import React from "react";
 import Home from "./Home"
 import NewPost from "./NewPost";
 import Error from "./Error"
+import Post from "./Post"
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 class App extends React.Component {
@@ -13,6 +14,7 @@ class App extends React.Component {
           <Switch>
             <Route path="/" component={Home} exact />  
             <Route path="/new-post" component={NewPost}/>
+            <Route path="/post/:id" component={Post}/>
             <Route component={Error} />
           </Switch>
         </div>
