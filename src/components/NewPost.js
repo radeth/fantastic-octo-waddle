@@ -10,7 +10,7 @@ class NewPost extends React.Component {
         <form
           onSubmit={e => {
             e.preventDefault();
-            let post = { text: this.input.value, date: this.date.value };
+            let post = {id: this.props.coutner, text: this.input.value, date: this.date.value };
             this.props.addPost(post);
           }}
         >
@@ -24,7 +24,10 @@ class NewPost extends React.Component {
   }
 }
 const mapStateToProps = state => {
-  return {};
+  
+  return {
+    coutner: Object.keys(state.posts).length
+  };
 };
 const mapDispatchToProps = dispatch => {
   return {
