@@ -1,33 +1,41 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import addPost from "../actions/addPost"
+import { Link, withRouter } from "react-router-dom";
+import addPost from "../actions/addPost";
 import { connect } from "react-redux";
 
 class NewPost extends React.Component {
   render() {
-    return(
+    return (
       <div>
-       <form onSubmit={e=>{
-         e.preventDefault()
-         console.log()
-       }}>
-         <input ref={value =>(this._date = value)} type='text'></input>
-         <input ref={value => (this._input = value)} type='date'></input>
-         <input type='submit'></input>
-       </form>
+        <form
+          onSubmit={e => {
+            e.preventDefault();
+            let post = { text: this.input.value, date: this.date.value };
+            this.props.addPost(post);
+          }}
+        >
+          <input ref={value => (this.input = value)} type="text" />
+          <input ref={value => (this.date = value)} type="date" />
+          <input type="submit" />
+        </form>
         <Link to="/">back</Link>
       </div>
     );
   }
 }
-const mapStateToProps = state =>{
-  return{}
-}
-const mapDispatchToProps = dispatch =>{
-  return{
-    addPost: post =>{
-      dispatch(addPost(post))
+const mapStateToProps = state => {
+  return {};
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    addPost: post => {
+      dispatch(addPost(post));
     }
-  }
-}
-export default connect(mapStateToProps,mapDispatchToProps)(NewPost);
+  };
+};
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(NewPost)
+);

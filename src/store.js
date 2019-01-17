@@ -1,4 +1,4 @@
-import {createStore} from "redux"
-import post from "./Reducers/postReducer"
+import { createStore } from "redux";
+import post from "./Reducers/postReducer";
 
-export default createStore(post,{posts:[]})
+export default createStore(post, { posts: [] });

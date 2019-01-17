@@ -4,13 +4,15 @@
         return (
             state = {
                 ...state,
-                posts:[
-                    ...state.posts,
-                    action.payload
-                ]
+               posts: [
+                 ...state.posts,
+                 action.payload
+               ]
             }
         )
+        default:
+        return state
     }
-    console.log(state)
+ 
 }
 export default postReducer
