@@ -7,21 +7,16 @@ class Home extends Component {
     return (
       <div>
         <h1>Home</h1>
-        {this.props.posts.map(post => {
-          return (
             <div>
               {this.props.posts.map(post => {
                 let path = `/post/${post.id}`
                 return (
-                  <Link to={path}>
-                  </Link>
+                  <Link to={path}>{post.id}</Link>
                 )
 
 
               })}
             </div>
-          );
-        })}
         <Link to="/new-post">new post</Link>
       </div>
     );
