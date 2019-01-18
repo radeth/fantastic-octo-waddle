@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
+
 class Home extends Component {
   render() {
     return (
@@ -11,10 +12,8 @@ class Home extends Component {
               {this.props.posts.map(post => {
                 let path = `/post/${post.id}`
                 return (
-                  <Link key={post.id} to={path}>{post.id}</Link>
+                  <Link className="m-1" key={post.id} to={path}>{post.id}</Link>
                 )
-
-
               })}
             </div>
         <Link to="/new-post">new post</Link>
