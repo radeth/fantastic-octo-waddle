@@ -7,13 +7,14 @@ class NewPost extends React.Component {
   render() {
     return (
       <div>
+        <h1>new post</h1>
         <form
           onSubmit={e => {
             e.preventDefault();
             let post = {
               id: parseInt(this.props.coutner, 10),
-              text: this.input.value,
-              date: this.date.value
+              content:{text: this.input.value,
+                      date: this.date.value}
             };
             this.props.addPost(post);
           }}

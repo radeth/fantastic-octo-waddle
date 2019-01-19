@@ -15,8 +15,8 @@ class Post extends React.Component {
     return (
       <div>
         <h2>{this.props.posts[this.props.match.params.id].id}</h2>
-        <h3>{this.props.posts[this.props.match.params.id].date}</h3>
-        <h3>{this.props.posts[this.props.match.params.id].text}</h3>
+        <h3>{this.props.posts[this.props.match.params.id].content.date}</h3>
+        <h3>{this.props.posts[this.props.match.params.id].content.text}</h3>
 
         <Link className="mr-2" to="/">
           back
