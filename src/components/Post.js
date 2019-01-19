@@ -2,22 +2,17 @@ import React from "react"
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
 class Post extends React.Component{
+
     render(){
         return(
             <div>
-            {console.log(this.props.match.params.id)}
-            {this.props.posts.map(post=>{
-              if (post.id = this.props.match.params.id){
-                return(
-                  <div>
-                  {post.id}<br/>
-                    {post.date}<br />
-                    {post.text}<br />
-                  </div>
-                )
-              }
-            })}
+            
+            <h2>{this.props.posts[this.props.match.params.id].id}</h2>
+            <h3>{this.props.posts[this.props.match.params.id].date}</h3>
+            <h3>{this.props.posts[this.props.match.params.id].text}</h3>
+            
             <Link to="/">back</Link>
+            <Link to="">edit</Link>
             </div>
             
         )
