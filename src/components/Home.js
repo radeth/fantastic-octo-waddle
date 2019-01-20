@@ -25,7 +25,6 @@ const mapDispatchToProps = dispatch => {
   return {};
 };
 const mapStateToProps = state => {
-  console.log(state);
   return {
     posts: state.posts
   };

@@ -27,6 +27,7 @@ class Post extends React.Component {
   }
 }
 const mapStateToProps = state => {
+  console.log(state)
   return {
     posts: state.posts
   };

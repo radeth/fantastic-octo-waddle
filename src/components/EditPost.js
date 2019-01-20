@@ -1,26 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
+import editPost from "./../actions/editPost"
 
 class EditPost extends Component {
   constructor() {
     super();
-    this.state = { path: "", posts: [] };
+    this.state = { path: "",};
   }
   componentDidMount() {
     this.setState({
       path: `/post/${this.props.match.params.id}`
     });
   }
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState === this.state) {
-      this.setState({
-        posts: this.props.posts
-      });
-    }
-    console.log(this.state);
-  }
-
+  
   render() {
     return (
       <div>
@@ -29,12 +22,7 @@ class EditPost extends Component {
         <form
           onSubmit={e => {
             e.preventDefault();
-            let editedPost = {
-              id: this.props.match.params.id,
-              text: this.textInput.value,
-              date: this.dateInput.value
-            };
-            console.log(this.state.posts);
+            this.props.editPost(this.props.match.params.id, this.textInput.value, this.dateInput.value)
           }}
         >
           <input
@@ -63,7 +51,11 @@ const mapStateToProps = state => {
   };
 };
 const mapDispatchToProps = dispatch => {
-  return {};
+  return {
+    editPost: (id,content)=>{
+      dispatch(editPost(id,content))
+    }
+  };
 };
 
 export default withRouter(

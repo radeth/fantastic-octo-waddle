@@ -6,11 +6,18 @@ const postReducer = (state, action) => {
         posts: [...state.posts, action.payload]
       });
     case "EDIT_POST":
+      const updatedPosts = state.posts.map(post => {
+        if (post.id === action.id) {
+          
+          return { ...post, content:action.payload }
+        }
+        return post
+      })
       return {
-        ...state,
-        posts: action.payload
-      };
+        posts: updatedPosts
+      }
     default:
+      console.log(state)
       return state;
   }
 };
