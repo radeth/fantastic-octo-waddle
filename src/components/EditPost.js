@@ -22,7 +22,10 @@ class EditPost extends Component {
         <form
           onSubmit={e => {
             e.preventDefault();
-            this.props.editPost(this.props.match.params.id, this.textInput.value, this.dateInput.value)
+            this.props.editPost(this.props.match.params.id,{
+              text: this.textInput.value,
+              date: this.dateInput.value
+            })
           }}
         >
           <input

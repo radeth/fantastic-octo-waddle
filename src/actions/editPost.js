@@ -1,8 +1,8 @@
-export default function editPost(id,text,date) {
-    console.log(id,text,date)
+export default function editPost(id,content) {
+    console.log(id,content)
     return{
         type: 'EDIT_POST',
         id: parseInt(id,10),
-        payload: {text,date}
+        payload: content
     }
 }
