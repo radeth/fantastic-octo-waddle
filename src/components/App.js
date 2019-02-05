@@ -8,8 +8,9 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 class App extends React.Component {
   render() {
+   
     return (
-      <BrowserRouter>
+      <BrowserRouter history={process.env.PUBLIC_URL}>
         <div>
           <Switch>
             <Route path="/" component={Home} exact />
