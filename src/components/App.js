@@ -10,7 +10,7 @@ class App extends React.Component {
   render() {
    
     return (
-      <BrowserRouter history={process.env.PUBLIC_URL}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div>
           <Switch>
             <Route path="/" component={Home} exact />
