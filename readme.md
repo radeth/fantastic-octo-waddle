@@ -1,4 +1,4 @@
-# To do list created by  **react router redux**
+# To do list created by  **react**
 
 
 ### TODOs
