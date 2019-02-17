@@ -2,6 +2,9 @@
 
 to do list build with react and redux
 
+## training projects
+[redux-example](https://github.com/radeth/redux-example/tree/master)
+
 ## Table of contents
 
 - [Technologies](#technologies)
@@ -30,5 +33,6 @@ You will also see any lint errors in the console.
 ### `npm run build`
 
 Builds the app for production to the `build` folder.<br>
-
+## TODS's
+- routing problem
 
